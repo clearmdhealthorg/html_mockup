@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        .container {
+            display: flex;
+            width: 100%;
+        }
+        .one {
+          background: url(
+            https://cdn.discordapp.com/attachments/1099112630486044753/1141007487311548577/Gyasig_Low_res_image_of_someone_going_to_get_a_surgery._48b8760e-9069-49d0-92a4-07fa44dd5913.png);
+        }
+        .two {
+          background: url(
+        https://cdn.discordapp.com/attachments/1099112630486044753/1140741635534229634/Gyasig_An_infographic_showing_how_a_virus_works._e452045c-8016-4aa6-8e7c-3d942da97701.png);
+        }
+        .three {
+          background: url(
+        https://cdn.discordapp.com/attachments/1099112630486044753/1140742758861127770/Gyasig_low-res_pixel_art_of_someone_heading_to_the_doctors_offi_ac8572d7-ce30-4945-abe3-7cfd9dbabe4a.png);
+        }
+        .four {
+          background: url(
+        https://cdn.discordapp.com/attachments/1099112630486044753/1140743332595769516/Gyasig_low-res_pixel_art_of_someone_heading_to_the_doctors_offi_47404db9-ade8-46c1-8406-7fc0c3631d47.png);
+        }
+        .one,
+        .two,
+        .three,
+        .four {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 80vh;
+            cursor: pointer;
+            flex: 0.8;
+            margin: 8px;
+            position: relative;
+            transition: all 0.7s ease-out;
+            
+        }
+
+        .section {
+            opacity: 0;
+            transition: opacity 0.7s ease-out;
+        }
+
+        .summary {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .active .section {
+            opacity: 1;
+        }
+
+        .active {
+            flex: 3;
+            opacity: .8;
+        }
+    </style>
+    <title>Expanding Cards</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="one active" onclick="toggleContent(0)">
+            <div class="section">
+                <p>HIV, or Human Immunodeficiency Virus, is an incurable sexually transmitted virus...</p>
+            </div>
+            <div class="summary">HIV</div>
+        </div>
+        <div class="two" onclick="toggleContent(1)">
+            <div class="section">
+                <p>Content for section two...</p>
+            </div>
+            <div class="summary">Section Two</div>
+        </div>
+        <div class="three" onclick="toggleContent(2)">
+            <div class="section">
+                <p>Content for section three...</p>
+            </div>
+            <div class="summary">Section Three</div>
+        </div>
+        <div class="four" onclick="toggleContent(3)">
+            <div class="section">
+                <p>Content for section four...</p>
+            </div>
+            <div class="summary">Section Four</div>
+        </div>
+    </div>
+
+    <script>
+        const sections = document.querySelectorAll(".one, .two, .three, .four");
+
+        function toggleContent(index) {
+            sections.forEach((section, i) => {
+                if (i === index) {
+                    section.classList.add("active");
+                } else {
+                    section.classList.remove("active");
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

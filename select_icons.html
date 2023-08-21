@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/28059e419f.js" crossorigin="anonymous"></script>
+    <style>
+        .icon-list {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 0;
+        }
+
+        .icon-item {
+            cursor: pointer;
+            padding: 10px;
+            font-size: 24px;
+            transition: background-color 0.3s;
+   
+            width : 10vw; 
+            height : 10vh;
+        }
+
+        .icon-item.selected {
+            background-color: rgba(53, 144, 213, .1);
+        }
+        .i { 
+            width : 1vw; 
+            height : 1vh;
+        }
+    </style>
+    <title>Icon Selector</title>
+</head>
+
+<body>
+    <ul class="icon-list" id="iconList">
+        <li  data-icon="fa-car">
+            <img class="icon-item" src="kidney_2.png"/> 
+        </li>
+        <li class="icon-item" data-icon="fa-bicycle"><i class="fas fa-bicycle"></i></li>
+        <li class="icon-item" data-icon="fa-bus"><i class="fas fa-bus"></i></li>
+        <li class="icon-item" data-icon="fa-train"><i class="fa fa-train"></i></li>
+        <!-- Add more icons as needed -->
+    </ul>
+
+    <script>
+        const iconItems = document.querySelectorAll('.icon-item');
+
+        iconItems.forEach((item) => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('selected');
+            });
+        });
+    </script>
+</body>
+
+</html>

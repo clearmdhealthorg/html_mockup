@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        /* Setting container to flex and 
+           width to 80% of view port */
+        .container {
+          display: flex;
+          width: 80%;
+        }
+        /*Adding background image to each section*/
+        .one {
+          background: url(
+        https://cdn.discordapp.com/attachments/1099112630486044753/1140740590431125534/Gyasig_A_image_of_someone_fighting_a_disease._6c3dc533-c66e-4d3b-8a45-b39927c13392.png);
+        }
+        .two {
+          background: url(
+        https://cdn.discordapp.com/attachments/1099112630486044753/1140741635534229634/Gyasig_An_infographic_showing_how_a_virus_works._e452045c-8016-4aa6-8e7c-3d942da97701.png);
+        }
+        .three {
+          background: url(
+        https://cdn.discordapp.com/attachments/1099112630486044753/1140742758861127770/Gyasig_low-res_pixel_art_of_someone_heading_to_the_doctors_offi_ac8572d7-ce30-4945-abe3-7cfd9dbabe4a.png);
+        }
+        .four {
+          background: url(
+        https://cdn.discordapp.com/attachments/1099112630486044753/1140743332595769516/Gyasig_low-res_pixel_art_of_someone_heading_to_the_doctors_offi_47404db9-ade8-46c1-8406-7fc0c3631d47.png);
+        }
+        
+        /* Background properties and 
+           transition effect to section */
+        .section {
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          height: 80vh;
+          cursor: pointer;
+          flex: 0.2;
+          margin: 8px;
+          position: relative;
+          transition: all 0.7s ease-out;
+        }
+        .one,
+        .two,
+        .three,
+        .four {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 80vh;
+            cursor: pointer;
+            flex: 0.2;
+            margin: 8px;
+            position: relative;
+            transition: all 0.7s ease-out;
+        }
+        
+        /* section with active class will
+           grow flex to 3 times */
+        .section.active {
+          flex: 3;
+          opacity: .7;
+        }
+    </style>
+    <title>Expanding Cards</title>
+</head>
+
+<body>
+
+    <!-- Container -->
+    <div class="container">
+
+        <!-- Div with section and active -->
+        <div class="section one active">
+            <p style="opacity: 1;">
+                HIV, or Human Immunodeficiency Virus, is an incurable sexually transmitted virus that can lead to Acquired Immunodeficiency Syndrome (AIDS).
+                 Initial symptoms of HIV may mimic those of a cold or flu, such as night sweats, fever, chills, and enlarged lymph nodes throughout the body. HIV finds and attacks healthy immune cells called CD4. 
+                 Eventually, when a person's CD4 count becomes low enough, they are considered to have AIDS. Although there is no cure for HIV/AIDS, there are many successful anti-viral medications that can halt progression of the virus.
+            </p>
+        </div>
+
+        <!-- All another div with section -->
+        <div class="section two"></div>
+        <div class="section three"></div>
+        <div class="section four"></div>
+    </div>
+
+    <script>
+        // selecting all sections with class of section
+        const sections = document.querySelectorAll(".section");
+        
+        // Foreach section when clicked
+        sections.forEach((section) => {
+          section.addEventListener("click", () => {
+            
+            // remove active class from all another section and
+            // add it to the selected section
+            sections.forEach((section) => {
+              section.classList.remove("active");
+            });
+            section.classList.add("active");
+          });
+        });
+    </script>
+</body>
+
+</html>
